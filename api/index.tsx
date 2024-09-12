@@ -3,6 +3,8 @@ import { devtools } from 'frog/dev'
 import { serveStatic } from 'frog/serve-static'
 import { handle } from 'frog/vercel'
 
+const FRAME_URL = 'https://sharebutton-mu.vercel.app/api'
+
 export const app = new Frog({
   assetsPath: '/',
   basePath: '/api',
@@ -56,7 +58,7 @@ app.frame('/', (c) => {
       <Button value="oranges">Oranges</Button>,
       <Button value="bananas">Bananas</Button>,
       status === 'response' && <Button.Reset>Reset</Button.Reset>,
-      status === 'response' && <Button action="post">Share</Button>,
+      <Button.Mint target={FRAME_URL}>Share</Button.Mint>,
     ],
   })
 })
