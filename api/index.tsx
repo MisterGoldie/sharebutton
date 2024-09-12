@@ -61,7 +61,7 @@ app.frame('/', (c) => {
       
       // Implementing the working "Share" button with a pre-filled Farcaster draft
       <Button.Link 
-        href="https://warpcast.com/~/compose?text=Check%20out%20this%20cool%20frame%20on%20Farcaster!"
+        href="https://warpcast.com/~/compose?text=If%20you%20like%20this%20frame%20make%20sure%20you%20follow%20@goldie"
       >
         Share
       </Button.Link>,  // This button opens a pre-filled cast draft on Farcaster
