@@ -15,6 +15,9 @@ app.frame('/', (c) => {
 
   const originalFramesLink = 'https://sharebutton-mu.vercel.app/api' // Replace with your actual Frames link
 
+  // Construct the Farcaster share URL with both text and the embedded link
+  const farcasterShareURL = `https://warpcast.com/~/compose?text=Check%20out%20this%20cool%20frame%20on%20Farcaster!&embeds[]=${encodeURIComponent(originalFramesLink)}`
+
   return c.res({
     image: (
       <div
@@ -58,13 +61,12 @@ app.frame('/', (c) => {
       <Button value="oranges">Oranges</Button>,
       <Button value="bananas">Bananas</Button>,
       status === 'response' && <Button.Reset>reset</Button.Reset>,
-      
-      // Implementing the working "Share" button with a pre-filled Farcaster draft
+      // Share Button with both text and link embedded
       <Button.Link 
-        href="https://warpcast.com/~/compose?text=If%20you%20like%20this%20frame%20make%20sure%20you%20follow%20@goldie"
+        href={farcasterShareURL}
       >
         Share
-      </Button.Link>,  // This button opens a pre-filled cast draft on Farcaster
+      </Button.Link>,  // This button now shares both text and the link
     ],
   })
 })
