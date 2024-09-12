@@ -13,7 +13,7 @@ app.frame('/', (c) => {
   const { buttonValue, inputText, status } = c
   const fruit = inputText || buttonValue
 
-  const originalFramesLink = 'https://example.com/original-frames-link' // Replace with your actual Frames link
+  const originalFramesLink = 'https://sharebutton-mu.vercel.app/api' // Replace with your actual Frames link
 
   return c.res({
     image: (
