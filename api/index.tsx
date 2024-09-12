@@ -13,6 +13,8 @@ app.frame('/', (c) => {
   const { buttonValue, inputText, status } = c
   const fruit = inputText || buttonValue
 
+  const originalFramesLink = 'https://example.com/original-frames-link' // Replace with your actual Frames link
+
   return c.res({
     image: (
       <div
@@ -56,7 +58,7 @@ app.frame('/', (c) => {
       <Button value="oranges">Oranges</Button>,
       <Button value="bananas">Bananas</Button>,
       status === 'response' && <Button.Reset>Reset</Button.Reset>,
-      <Button action="post">Share</Button>,
+      <Button.Link href={originalFramesLink}>Share</Button.Link>,
     ],
   })
 })
